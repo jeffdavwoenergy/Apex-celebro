@@ -1,55 +1,76 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/goldrush/Navbar";
+import Hero from "./components/goldrush/Hero";
+import Services from "./components/goldrush/Services";
+import Partners from "./components/goldrush/Partners";
+import About from "./components/goldrush/About";
+import Insights from "./components/goldrush/Insights";
+import Footer from "./components/goldrush/Footer";
+import ServiceDetail from "./components/goldrush/ServiceDetail";
+import AboutPage from "./components/goldrush/AboutPage";
+import InsightDetail from "./components/goldrush/InsightDetail";
+import InsightsPage from "./components/goldrush/InsightsPage";
+import ContactPage from "./components/goldrush/ContactPage";
+import SBAEligibility from "./components/goldrush/SBAEligibility";
+import TermsPage from "./components/goldrush/TermsPage";
+import PrivacyPage from "./components/goldrush/PrivacyPage";
+import SMSConsentPage from "./components/goldrush/SMSConsentPage";
+import SMSScreenshotPage from "./components/goldrush/SMSScreenshotPage";
+import QualificationPage from "./components/goldrush/QualificationPage";
+import { serviceData, insightData } from "./data/mockData";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Home Page Component
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Partners />
+      <About />
+      <Insights />
+    </>
+  );
+}
 
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
+function AppContent() {
+  const location = useLocation();
+  const hideFooterRoutes = ['/qualification'];
+  const hideNavbarRoutes = ['/qualification'];
+  const shouldShowFooter = !hideFooterRoutes.includes(location.pathname);
+  const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div className="antialiased text-slate-800 bg-white selection:bg-pink-200 selection:text-pink-900">
+      {shouldShowNavbar && <Navbar />}
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services/:id" element={<ServiceDetail serviceData={serviceData} />} />
+        <Route path="/insights" element={<InsightsPage insightData={insightData} />} />
+        <Route path="/insights/:id" element={<InsightDetail insightData={insightData} />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/apply" element={<ContactPage />} />
+        <Route path="/qualification" element={<QualificationPage />} />
+        <Route path="/sba-eligibility" element={<SBAEligibility />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/sms-consent" element={<SMSConsentPage />} />
+        <Route path="/sms-screenshot" element={<SMSScreenshotPage />} />
+      </Routes>
+
+      {shouldShowFooter && <Footer />}
     </div>
   );
-};
+}
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
