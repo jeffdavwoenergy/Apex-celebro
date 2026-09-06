@@ -47,10 +47,6 @@ const HeroSlider = () => {
             <div className="absolute inset-0 opacity-[0.10]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.4) 1px, transparent 0)', backgroundSize: '44px 44px' }}></div>
 
             <div className={`relative z-10 text-center px-6 max-w-4xl mx-auto pt-24 pb-24 ${idx === i ? 'animate-fade-up' : ''}`}>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 mb-7">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
-                <span className="text-white/90 text-[11px] font-semibold tracking-[0.22em] uppercase">{s.eyebrow}</span>
-              </div>
               <h1 className="font-display font-bold text-white leading-[1.02] tracking-tight text-[2.9rem] sm:text-6xl lg:text-7xl xl:text-[5.2rem] [text-shadow:_0_2px_28px_rgba(0,0,0,0.4)]" data-testid="hero-headline">
                 {s.title}
               </h1>

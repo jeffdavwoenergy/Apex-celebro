@@ -55,6 +55,7 @@ module.exports = {
                         'fade-up': { '0%': { opacity: '0', transform: 'translateY(16px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
                         'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
                         'float': { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-14px)' } },
+                        'flash': { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0.25' } },
                 },
                 animation: {
                         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -62,6 +63,7 @@ module.exports = {
                         'fade-up': 'fade-up 0.6s ease-out both',
                         'fade-in': 'fade-in 0.8s ease-out both',
                         'float': 'float 7s ease-in-out infinite',
+                        'flash': 'flash 0.55s ease-in-out infinite',
                 }
         }
   },
