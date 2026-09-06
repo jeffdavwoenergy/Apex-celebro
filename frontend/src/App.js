@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/apex/Home';
 import ServicesPage from './components/apex/ServicesPage';
 import ServiceDetail from './components/apex/ServiceDetail';
+import AboutPage from './components/apex/AboutPage';
 import ContactPage from './components/apex/ContactPage';
 import PrivacyPage from './components/apex/PrivacyPage';
 import TermsPage from './components/apex/TermsPage';
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />

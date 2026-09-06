@@ -15,7 +15,7 @@ body {
 }
 
 ::selection {
-    background: #4F46E5;
+    background: #1E48FF;
     color: #ffffff;
 }
 
@@ -25,6 +25,12 @@ code {
 
 #emergent-badge { display: none !important; }
 
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -32,27 +38,59 @@ code {
     overflow: hidden;
 }
 
+/* Glossy animated gradient border (professional blue sheen) */
+.glossy-border { position: relative; }
+.glossy-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(130deg, #5A78FF, #22D3EE, #1E48FF, #8AA0FF, #1536D6);
+    background-size: 300% 300%;
+    animation: borderShine 9s ease infinite;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+}
+@keyframes borderShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Subtle top gloss sheen for dark cards */
+.gloss-top::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0) 42%);
+    pointer-events: none;
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;
-        --foreground: 240 10% 6%;
+        --foreground: 226 44% 12%;
         --card: 0 0% 100%;
-        --card-foreground: 240 10% 6%;
+        --card-foreground: 226 44% 12%;
         --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 6%;
-        --primary: 240 10% 6%;
+        --popover-foreground: 226 44% 12%;
+        --primary: 226 44% 12%;
         --primary-foreground: 0 0% 98%;
-        --secondary: 240 5% 96%;
-        --secondary-foreground: 240 10% 6%;
-        --muted: 240 5% 96%;
-        --muted-foreground: 240 4% 46%;
-        --accent: 240 5% 96%;
-        --accent-foreground: 240 10% 6%;
+        --secondary: 220 20% 96%;
+        --secondary-foreground: 226 44% 12%;
+        --muted: 220 20% 96%;
+        --muted-foreground: 220 10% 46%;
+        --accent: 220 20% 96%;
+        --accent-foreground: 226 44% 12%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 240 6% 90%;
-        --input: 240 6% 90%;
-        --ring: 243 75% 59%;
+        --border: 220 16% 90%;
+        --input: 220 16% 90%;
+        --ring: 229 100% 56%;
         --radius: 0.75rem;
     }
 }

@@ -43,15 +43,15 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 items-stretch">
           {plans.map((p) => {
             const hot = p.highlight;
             return (
               <div
                 key={p.name}
-                className={`relative flex flex-col rounded-[24px] p-7 lg:p-8 transition-transform duration-300 ${
+                className={`relative flex flex-col rounded-[22px] p-6 lg:p-7 transition-transform duration-300 ${
                   hot
-                    ? 'bg-gradient-to-b from-brand-600/25 to-brand-800/10 border-2 border-brand-500 shadow-[0_30px_70px_rgba(30,72,255,0.35)] xl:-translate-y-3'
+                    ? 'bg-gradient-to-b from-brand-600/25 to-brand-800/10 border-2 border-brand-500 shadow-[0_30px_70px_rgba(30,72,255,0.35)] lg:-translate-y-3'
                     : 'bg-white/[0.04] border border-white/10 hover:border-white/25'
                 }`}
                 data-testid={`plan-${p.name.toLowerCase().replace(/[^a-z]+/g, '-')}`}
@@ -61,8 +61,8 @@ const Pricing = () => {
                     {p.badge}
                   </span>
                 )}
-                <h3 className="font-display font-bold text-white text-lg">{p.name}</h3>
-                <div className="mt-4 font-display font-bold text-white text-4xl tracking-tight">{p.price}</div>
+                <h3 className="font-display font-bold text-white text-lg leading-tight min-h-[2.6rem]">{p.name}</h3>
+                <div className="mt-3 font-display font-bold text-white text-[2rem] lg:text-[2.1rem] tracking-tight">{p.price}</div>
                 <span className="text-white/45 text-sm font-medium mt-1">{p.cadence}</span>
                 <p className="text-white/65 mt-4 leading-relaxed text-[15px]">{p.tagline}</p>
 

@@ -46,6 +46,7 @@ const Footer = () => {
             <h4 className="text-sm font-bold uppercase tracking-wider text-white/40 mb-5">Company</h4>
             <ul className="space-y-3 text-white/70">
               <li><button onClick={() => navigate('/services')} className="hover:text-brand-300 transition-colors">All Services</button></li>
+              <li><button onClick={() => navigate('/about')} className="hover:text-brand-300 transition-colors">About Us</button></li>
               <li><button onClick={goPricing} className="hover:text-brand-300 transition-colors">Pricing</button></li>
               <li><button onClick={() => navigate('/contact')} className="hover:text-brand-300 transition-colors">Contact</button></li>
               <li><a href="mailto:hello@apexcerebro.com" className="flex items-center gap-2 hover:text-brand-300 transition-colors"><Mail size={15} /> hello@apexcerebro.com</a></li>
