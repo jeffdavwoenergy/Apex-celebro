@@ -38,20 +38,38 @@ code {
     overflow: hidden;
 }
 
-/* Glossy animated gradient border (professional blue sheen) */
+/* Rainbow gradient used for outlines + glow */
+:root {
+    --rainbow: linear-gradient(130deg, #8B5CF6, #EC4899, #F97316, #3B82F6, #22D3EE, #22C55E, #8B5CF6);
+}
+
+/* Always-on rainbow outline with a soft glow halo */
 .glossy-border { position: relative; }
 .glossy-border::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1.5px;
-    background: linear-gradient(130deg, #5A78FF, #22D3EE, #1E48FF, #8AA0FF, #1536D6);
+    padding: 1.7px;
+    background: var(--rainbow);
     background-size: 300% 300%;
-    animation: borderShine 9s ease infinite;
+    animation: borderShine 7s ease infinite;
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude;
+    pointer-events: none;
+}
+.glossy-border::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: var(--rainbow);
+    background-size: 300% 300%;
+    animation: borderShine 7s ease infinite;
+    filter: blur(16px);
+    opacity: 0.6;
+    z-index: -1;
     pointer-events: none;
 }
 @keyframes borderShine {
@@ -60,17 +78,17 @@ code {
     100% { background-position: 0% 50%; }
 }
 
-/* Colourful outline that appears + glows on hover */
+/* Same rainbow outline + glow, revealed on hover */
 .glossy-hover { position: relative; }
 .glossy-hover::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    padding: 1.5px;
-    background: linear-gradient(130deg, #5A78FF, #22D3EE, #1E48FF, #8AA0FF, #1536D6);
+    padding: 1.7px;
+    background: var(--rainbow);
     background-size: 300% 300%;
-    animation: borderShine 9s ease infinite;
+    animation: borderShine 7s ease infinite;
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -78,7 +96,22 @@ code {
     transition: opacity 0.35s ease;
     pointer-events: none;
 }
+.glossy-hover::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: var(--rainbow);
+    background-size: 300% 300%;
+    animation: borderShine 7s ease infinite;
+    filter: blur(16px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: -1;
+    pointer-events: none;
+}
 .glossy-hover:hover::before { opacity: 1; }
+.glossy-hover:hover::after { opacity: 0.6; }
 
 /* Subtle top gloss sheen for dark cards */
 .gloss-top::after {
