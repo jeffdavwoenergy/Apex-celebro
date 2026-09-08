@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center">
-            <button onClick={() => navigate('/contact')} className={`px-6 py-2.5 rounded-full font-bold text-[14px] flex items-center gap-2 group transition-all duration-300 ${cta}`} data-testid="nav-book-btn">
+            <button onClick={() => navigate('/contact')} className={`glossy-border glow-cast-sm px-6 py-2.5 rounded-full font-bold text-[14px] flex items-center gap-2 group transition-all duration-300 ${cta}`} data-testid="nav-book-btn">
               Book a Call
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1 duration-300" />
             </button>
