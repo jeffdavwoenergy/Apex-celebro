@@ -42,16 +42,16 @@ const Problem = () => {
   return (
     <section id="problem" className="scroll-mt-24 bg-white py-24 lg:py-32">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mx-auto text-center mb-14">
           <span className="text-brand-600 font-bold tracking-[0.18em] text-xs uppercase">The core problem we solve</span>
           <h2 className="font-display font-bold text-ink text-4xl lg:text-5xl mt-4 leading-tight">
             Your best people are stuck doing work software should handle.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* The Manual Way */}
-          <div className="rounded-[28px] border border-black/8 bg-white p-7 lg:p-9 shadow-[0_10px_40px_rgba(10,21,51,0.05)]">
+          <div className="rounded-[24px] border border-black/8 bg-white p-6 lg:p-7 shadow-[0_10px_40px_rgba(10,21,51,0.05)]">
             <div className="flex items-center gap-2.5 mb-6">
               <span className="w-9 h-9 rounded-xl bg-red-50 text-red-500 flex items-center justify-center"><X size={19} strokeWidth={2.6} /></span>
               <h3 className="font-display font-bold text-ink text-xl">The Manual Way</h3>
@@ -73,7 +73,7 @@ const Problem = () => {
           </div>
 
           {/* The APEX CEREBRO Way */}
-          <div className="rounded-[28px] border border-brand-200 bg-gradient-to-b from-brand-50/50 to-white p-7 lg:p-9 shadow-[0_20px_55px_rgba(30,72,255,0.10)]">
+          <div className="rounded-[24px] border border-brand-200 bg-gradient-to-b from-brand-50/50 to-white p-6 lg:p-7 shadow-[0_20px_55px_rgba(30,72,255,0.10)]">
             <div className="flex items-center gap-2.5 mb-6">
               <img src="/apex-mark-dark.png" alt="APEX CEREBRO" className="h-5 w-auto" />
               <h3 className="font-display font-bold text-ink text-xl">The APEX CEREBRO Way</h3>
