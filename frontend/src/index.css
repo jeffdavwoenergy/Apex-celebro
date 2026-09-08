@@ -146,6 +146,10 @@ code {
 }
 .glow-anim.glossy-border::before { opacity: 0.5; }
 
+/* Rainbow ring rendered on top of full-bleed content (service cards) */
+.ring-front.glossy-border::before { z-index: 4; opacity: 0.95; }
+.ring-front.glossy-border::after { inset: -3px; filter: blur(18px); opacity: 0.5; }
+
 /* Internal rainbow glow (matches the pricing plans) */
 .feature-card { isolation: isolate; }
 .feature-card.glossy-border::before { opacity: 0.55; }

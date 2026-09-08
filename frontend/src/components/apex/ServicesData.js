@@ -1,12 +1,12 @@
 import { Workflow, Bot, ScanText, TrendingUp, BarChart3, Cable } from 'lucide-react';
 
 export const SERVICE_IMAGES = {
-  workflow: 'https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab?auto=format&fit=crop&q=80&w=1600',
-  chatbots: 'https://images.unsplash.com/photo-1618544976420-1f213fcf2052?auto=format&fit=crop&q=80&w=1600',
-  documents: 'https://images.unsplash.com/photo-1584472666879-7d92db132958?auto=format&fit=crop&q=80&w=1600',
-  crm: 'https://images.unsplash.com/photo-1698306642516-9841228dcff3?auto=format&fit=crop&q=80&w=1600',
-  reporting: 'https://images.unsplash.com/photo-1584472666879-7d92db132958?auto=format&fit=crop&q=80&w=1600',
-  integrations: 'https://images.unsplash.com/photo-1517181875630-f72350452109?auto=format&fit=crop&q=80&w=1600',
+  workflow: 'https://images.unsplash.com/photo-1591381287254-b3349c60bf9b?auto=format&fit=crop&q=80&w=1600',
+  chatbots: 'https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&q=80&w=1600',
+  documents: 'https://images.unsplash.com/photo-1583521214690-73421a1829a9?auto=format&fit=crop&q=80&w=1600',
+  crm: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600',
+  reporting: 'https://images.unsplash.com/photo-1644088379091-d574269d422f?auto=format&fit=crop&q=80&w=1600',
+  integrations: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=1600',
 };
 
 export const services = [

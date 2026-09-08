@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, Info, HelpCircle } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { services } from './ServicesData';
 
@@ -70,7 +70,30 @@ const Navbar = () => {
               </div>
             </div>
 
-            <button onClick={() => navigate('/about')} className="transition-colors hover:text-brand-600">About</button>
+            {/* Company dropdown */}
+            <div className="group relative">
+              <button className="flex items-center gap-1.5 py-2 transition-colors hover:text-brand-600">
+                Company <ChevronDown size={15} className="transition-transform duration-300 group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-4 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+                <div className="glossy-border w-[300px] rounded-[22px] bg-white shadow-[0_30px_70px_rgba(10,21,51,0.22)] p-3">
+                  <button onClick={() => navigate('/about')} className="w-full flex items-start gap-3 p-3 rounded-xl text-left hover:bg-brand-50 transition-colors">
+                    <span className="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center flex-shrink-0"><Info size={19} /></span>
+                    <span>
+                      <span className="block font-bold text-ink text-[14px]">About Us</span>
+                      <span className="block text-ink/55 text-[12px] mt-0.5">Who we are and how we work.</span>
+                    </span>
+                  </button>
+                  <button onClick={() => navigate('/faq')} className="w-full flex items-start gap-3 p-3 rounded-xl text-left hover:bg-brand-50 transition-colors">
+                    <span className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0"><HelpCircle size={19} /></span>
+                    <span>
+                      <span className="block font-bold text-ink text-[14px]">FAQ</span>
+                      <span className="block text-ink/55 text-[12px] mt-0.5">Answers to common questions.</span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
             <button onClick={goPricing} className="transition-colors hover:text-brand-600">Pricing</button>
             <button onClick={() => navigate('/contact')} className="transition-colors hover:text-brand-600">Contact</button>
           </div>
@@ -103,7 +126,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          {[{ l: 'About', f: () => navigate('/about') }, { l: 'Pricing', f: goPricing }, { l: 'Contact', f: () => navigate('/contact') }].map((x) => (
+          {[{ l: 'About Us', f: () => navigate('/about') }, { l: 'FAQ', f: () => navigate('/faq') }, { l: 'Pricing', f: goPricing }, { l: 'Contact', f: () => navigate('/contact') }].map((x) => (
             <button key={x.l} onClick={() => { setOpen(false); setTimeout(x.f, 60); }} className="w-full text-left py-6 text-2xl font-display font-semibold text-white border-b border-white/10 hover:text-brand-400 transition-colors">{x.l}</button>
           ))}
           <button onClick={() => { setOpen(false); setTimeout(() => navigate('/contact'), 60); }} className="mt-10 w-full bg-brand-600 text-white py-5 rounded-full font-bold text-lg flex items-center justify-center gap-3 active:scale-95 transition-transform">

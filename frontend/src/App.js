@@ -6,6 +6,7 @@ import ServicesPage from './components/apex/ServicesPage';
 import ServiceDetail from './components/apex/ServiceDetail';
 import AboutPage from './components/apex/AboutPage';
 import ContactPage from './components/apex/ContactPage';
+import FAQPage from './components/apex/FAQPage';
 import PrivacyPage from './components/apex/PrivacyPage';
 import TermsPage from './components/apex/TermsPage';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
         </Routes>

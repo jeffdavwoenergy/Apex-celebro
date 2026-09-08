@@ -7,19 +7,19 @@ const slides = [
     eyebrow: 'AI Workflow Automation',
     title: 'Automation that runs itself.',
     sub: 'Custom AI agents that clear your busywork — so your team can focus on growth.',
-    image: 'https://images.unsplash.com/photo-1618544976420-1f213fcf2052?auto=format&fit=crop&q=80&w=2200',
+    image: 'https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?auto=format&fit=crop&q=80&w=2200',
   },
   {
     eyebrow: 'Connect Everything',
     title: 'Every app, finally in sync.',
     sub: 'End-to-end workflows with Make, Zapier and n8n across your whole stack.',
-    image: 'https://images.unsplash.com/photo-1517181875630-f72350452109?auto=format&fit=crop&q=80&w=2200',
+    image: 'https://images.unsplash.com/photo-1597733336794-12d05021d510?auto=format&fit=crop&q=80&w=2200',
   },
   {
     eyebrow: 'Always On',
     title: 'Reads, replies, and routes. 24/7.',
     sub: 'AI agents and document intelligence, working the moment new work arrives.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2200',
+    image: 'https://images.unsplash.com/photo-1651340527836-263c5072968e?auto=format&fit=crop&q=80&w=2200',
   },
 ];
 
