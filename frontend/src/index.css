@@ -140,10 +140,11 @@ code {
 }
 .glow-anim {
     animation: glowHue 7s linear infinite;
-    box-shadow: 0 0 44px -6px hsl(var(--gh) 85% 62% / 0.55),
-                0 0 68px -8px hsl(calc(var(--gh) + 70) 85% 62% / 0.45),
-                0 0 88px -12px hsl(calc(var(--gh) + 170) 85% 62% / 0.42);
+    box-shadow: 0 0 32px -8px hsl(var(--gh) 85% 62% / 0.32),
+                0 0 52px -14px hsl(calc(var(--gh) + 70) 85% 62% / 0.26),
+                0 0 72px -18px hsl(calc(var(--gh) + 170) 85% 62% / 0.22);
 }
+.glow-anim.glossy-border::before { opacity: 0.5; }
 @keyframes glowHue {
     to { --gh: 360; }
 }
