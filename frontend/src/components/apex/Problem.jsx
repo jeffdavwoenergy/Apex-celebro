@@ -51,7 +51,7 @@ const Problem = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* The Manual Way */}
-          <div className="glossy-border rounded-[24px] bg-white p-6 lg:p-7 shadow-[0_10px_40px_rgba(10,21,51,0.06)]">
+          <div className="glossy-border glossy-strong rounded-[24px] bg-white p-6 lg:p-7 shadow-[0_10px_40px_rgba(10,21,51,0.06)]">
             <div className="flex items-center gap-2.5 mb-6">
               <span className="w-9 h-9 rounded-xl bg-red-50 text-red-500 flex items-center justify-center"><X size={19} strokeWidth={2.6} /></span>
               <h3 className="font-display font-bold text-ink text-xl">The Manual Way</h3>
@@ -73,7 +73,7 @@ const Problem = () => {
           </div>
 
           {/* The APEX CEREBRO Way */}
-          <div className="glossy-border rounded-[24px] bg-gradient-to-b from-brand-50/50 to-white p-6 lg:p-7 shadow-[0_20px_55px_rgba(30,72,255,0.10)]">
+          <div className="glossy-border glossy-strong rounded-[24px] bg-gradient-to-b from-brand-50/50 to-white p-6 lg:p-7 shadow-[0_20px_55px_rgba(30,72,255,0.10)]">
             <div className="flex items-center gap-2.5 mb-6">
               <img src="/apex-mark-dark.png" alt="APEX CEREBRO" className="h-5 w-auto" />
               <h3 className="font-display font-bold text-ink text-xl">The APEX CEREBRO Way</h3>

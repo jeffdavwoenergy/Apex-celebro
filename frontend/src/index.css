@@ -72,6 +72,12 @@ code {
     z-index: -1;
     pointer-events: none;
 }
+/* Stronger coloured glow (shadow halo) for the feature cards */
+.glossy-strong::after {
+    inset: -6px;
+    filter: blur(30px);
+    opacity: 0.8;
+}
 @keyframes borderShine {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
