@@ -36,8 +36,8 @@ const HeroSlider = () => {
   }, [next]);
 
   return (
-    <section className="bg-white px-2 sm:px-3 lg:px-4 pt-2 sm:pt-3 lg:pt-4" data-testid="hero-section">
-      <div className="relative overflow-hidden rounded-[26px] sm:rounded-[36px] lg:rounded-[44px] bg-ink min-h-[90vh]">
+    <section className="bg-white p-3 sm:p-4 lg:p-6" data-testid="hero-section">
+      <div className="relative overflow-hidden rounded-[26px] sm:rounded-[36px] lg:rounded-[44px] bg-ink min-h-[88vh]">
         {slides.map((s, idx) => (
           <div key={idx} className={`absolute inset-0 flex items-center justify-center transition-opacity duration-[900ms] ${idx === i ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
             <img src={s.image} alt="" className="absolute inset-0 w-full h-full object-cover" />
