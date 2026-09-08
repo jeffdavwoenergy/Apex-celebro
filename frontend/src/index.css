@@ -60,6 +60,26 @@ code {
     100% { background-position: 0% 50%; }
 }
 
+/* Colourful outline that appears + glows on hover */
+.glossy-hover { position: relative; }
+.glossy-hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(130deg, #5A78FF, #22D3EE, #1E48FF, #8AA0FF, #1536D6);
+    background-size: 300% 300%;
+    animation: borderShine 9s ease infinite;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+.glossy-hover:hover::before { opacity: 1; }
+
 /* Subtle top gloss sheen for dark cards */
 .gloss-top::after {
     content: '';
