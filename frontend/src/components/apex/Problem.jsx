@@ -1,9 +1,9 @@
 import React from 'react';
-import { X, Inbox, Clock, Keyboard, FileWarning, Zap, BadgeCheck, ScanText, DollarSign } from 'lucide-react';
+import { X, Inbox, Repeat, Keyboard, FileWarning, Zap, BadgeCheck, ScanText, DollarSign } from 'lucide-react';
 
 const manualTiles = [
   { icon: Inbox, label: 'Overflowing Inbox' },
-  { icon: Clock, label: 'Slow Replies' },
+  { icon: Repeat, label: 'Repetitive Tasks' },
   { icon: Keyboard, label: 'Manual Data Entry' },
   { icon: FileWarning, label: 'Lost Documents' },
 ];
@@ -30,11 +30,11 @@ const apexPoints = [
 ];
 
 const MiniTile = ({ icon: Icon, label, tone }) => (
-  <div className="rounded-xl bg-white border border-black/5 shadow-sm py-4 px-2 flex flex-col items-center text-center gap-2">
-    <span className={`w-9 h-9 rounded-full flex items-center justify-center ${tone === 'bad' ? 'bg-red-50 text-red-400' : 'bg-brand-50 text-brand-600'}`}>
-      <Icon size={17} strokeWidth={2} />
+  <div className="rounded-xl bg-white border border-black/5 shadow-sm py-3 px-1.5 flex flex-col items-center text-center gap-1.5">
+    <span className={`w-8 h-8 rounded-full flex items-center justify-center ${tone === 'bad' ? 'bg-red-50 text-red-400' : 'bg-brand-50 text-brand-600'}`}>
+      <Icon size={15} strokeWidth={2} />
     </span>
-    <span className="text-[12px] font-bold text-ink/70 leading-tight">{label}</span>
+    <span className="text-[11px] font-bold text-ink/70 leading-tight">{label}</span>
   </div>
 );
 
@@ -56,7 +56,7 @@ const Problem = () => {
               <span className="w-9 h-9 rounded-xl bg-red-50 text-red-500 flex items-center justify-center"><X size={19} strokeWidth={2.6} /></span>
               <h3 className="font-display font-bold text-ink text-xl">The Manual Way</h3>
             </div>
-            <div className="rounded-2xl bg-red-50/60 p-3 grid grid-cols-2 gap-3 mb-8">
+            <div className="rounded-2xl bg-red-50/60 p-3 grid grid-cols-2 gap-2.5 mb-8 max-w-[280px] mx-auto">
               {manualTiles.map((t) => <MiniTile key={t.label} {...t} tone="bad" />)}
             </div>
             <ul className="space-y-5">
@@ -78,7 +78,7 @@ const Problem = () => {
               <img src="/apex-mark-dark.png" alt="APEX CEREBRO" className="h-5 w-auto" />
               <h3 className="font-display font-bold text-ink text-xl">The APEX CEREBRO Way</h3>
             </div>
-            <div className="rounded-2xl bg-brand-50 p-3 grid grid-cols-2 gap-3 mb-8">
+            <div className="rounded-2xl bg-brand-50 p-3 grid grid-cols-2 gap-2.5 mb-8 max-w-[280px] mx-auto">
               {apexTiles.map((t) => <MiniTile key={t.label} {...t} tone="good" />)}
             </div>
             <ul className="space-y-5">
