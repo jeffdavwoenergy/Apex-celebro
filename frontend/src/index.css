@@ -132,6 +132,22 @@ code {
                 0 0 34px -8px rgba(34,211,238,0.55);
 }
 
+/* Animated rainbow glow that shifts colour in sync with the outline */
+@property --gh {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+.glow-anim {
+    animation: glowHue 7s linear infinite;
+    box-shadow: 0 0 44px -6px hsl(var(--gh) 85% 62% / 0.55),
+                0 0 68px -8px hsl(calc(var(--gh) + 70) 85% 62% / 0.45),
+                0 0 88px -12px hsl(calc(var(--gh) + 170) 85% 62% / 0.42);
+}
+@keyframes glowHue {
+    to { --gh: 360; }
+}
+
 /* Subtle top gloss sheen for dark cards */
 .gloss-top::after {
     content: '';

@@ -13,7 +13,7 @@ const IntroCard = () => {
           <h2 className="font-display font-bold text-ink text-2xl lg:text-3xl mt-3">Watch how APEX CEREBRO works.</h2>
         </div>
 
-        <div className="glossy-border glow-cast relative rounded-[24px] max-w-2xl mx-auto p-[3px]">
+        <div className="glossy-border relative rounded-[24px] max-w-2xl mx-auto p-[3px]">
           <div className="group relative rounded-[21px] overflow-hidden bg-ink aspect-video cursor-pointer">
             <img src={VIDEO_THUMB} alt="Product overview video" className="w-full h-full object-cover opacity-75 group-hover:opacity-90 transition-opacity duration-300" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/25 to-ink/30"></div>
