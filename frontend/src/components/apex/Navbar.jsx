@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100]">
-      <div className="container mx-auto px-4 pt-4">
+      <div className="container mx-auto px-4 lg:px-6 pt-4">
         <div className={`relative flex items-center justify-between rounded-full pl-5 pr-3 lg:pl-7 py-2.5 transition-all duration-300 ${pill} ${text}`}>
           <button onClick={() => navigate('/')} className="flex items-center gap-2.5 select-none z-[110]" data-testid="brand-logo">
             <img src={scrolled ? '/apex-mark-dark.png' : '/apex-mark-white.png'} alt="APEX CEREBRO" className="h-[22px] w-auto" />
@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center">
-            <button onClick={() => navigate('/contact')} className={`px-6 py-2.5 rounded-full font-bold text-[14px] flex items-center gap-2 group transition-all duration-300 ${cta}`} data-testid="nav-book-btn">
+            <button onClick={() => navigate('/contact')} className={`px-6 py-2.5 rounded-full font-bold text-[14px] flex items-center gap-2 group transition-all duration-300 ${cta} ${scrolled ? 'glossy-border feature-card overflow-hidden' : ''}`} data-testid="nav-book-btn">
               Book a Call
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1 duration-300" />
             </button>

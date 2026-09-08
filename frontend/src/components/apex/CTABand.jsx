@@ -15,7 +15,8 @@ const CTABand = ({ heading = 'Ready to hand the busywork to AI?', sub = 'Tell us
             <p className="text-white/65 text-lg mt-6 max-w-xl mx-auto leading-relaxed">{sub}</p>
             <button
               onClick={() => navigate('/contact')}
-              className="group mt-10 inline-flex items-center gap-3 bg-brand-600 text-white rounded-full pl-8 pr-2 py-2 font-bold text-base shadow-[0_10px_34px_rgba(30,72,255,0.45)] hover:bg-brand-700 transition-all duration-300"
+              className="group mt-10 inline-flex items-center gap-3 bg-brand-600 text-white rounded-full pl-8 pr-2 py-2 font-bold text-base glossy-border feature-card overflow-hidden hover:bg-brand-700 transition-all duration-300"
+              data-testid="ctaband-book-btn"
             >
               Book a Call
               <span className="w-10 h-10 rounded-full bg-white text-ink flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
