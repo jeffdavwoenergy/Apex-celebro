@@ -145,6 +145,15 @@ code {
                 0 0 72px -18px hsl(calc(var(--gh) + 170) 85% 62% / 0.22);
 }
 .glow-anim.glossy-border::before { opacity: 0.5; }
+
+/* Internal rainbow glow (matches the pricing plans) */
+.feature-card { isolation: isolate; }
+.feature-card.glossy-border::before { opacity: 0.55; }
+.feature-card.glossy-border::after {
+    inset: 0;
+    filter: blur(22px);
+    opacity: 0.45;
+}
 @keyframes glowHue {
     to { --gh: 360; }
 }
